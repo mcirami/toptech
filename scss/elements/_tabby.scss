@@ -1,0 +1,145 @@
+/* =============================================================
+
+    Tabby 3.2
+    Simple, mobile-first toggle tabs by Chris Ferdinandi.
+    http://gomakethings.com
+
+    Free to use under the MIT License.
+    http://gomakethings.com/mit/
+    
+ * ============================================================= */
+
+/*  Hide tab navigation by default */
+.tabs {
+    display: none;
+    visibility: hidden;
+}
+
+/*  Display tab navigation if javascript enabled.
+ *  This requires on the included js-accessibility.js script. */
+.js .tabs {
+    display: block;
+    visibility: visible;
+}
+
+/*  Force browser to show a pointer on tab navigation. */
+.tabs a, .tabs button {
+    cursor: pointer;
+    font-family: 'Lato';
+    text-transform: uppercase;
+    font-size: 16px;
+    color: $dark_gray;
+}
+
+/*  Hide tab content if javascript is enabled. */
+.js .tabs-pane {
+    display: none;
+    visibility: hidden;
+}
+
+/*  Show tab content when active class is added.
+ *  This class is added via javascript. */
+.tabs-pane.active {
+    display: block;
+    visibility: visible;
+    
+    ul {
+	    margin-top: 40px;
+	    list-style-position: inside;
+    }
+}
+
+/*  Fancy list styling for tab navigation.
+ *  Adjust to fit your design. */
+.tabs-horizontal,
+.tabs-stacked {
+    list-style: none;
+    margin-left: 0;
+    padding: 0;
+}
+
+/*  Display tab navigation as inline list. */
+
+.tabs-stacked > li {
+    display: inline-block;
+    float: none;
+    padding: .1em 1.7em;
+    border-right: 1px solid $light-gray;
+}
+
+.tabs-horizontal > li {
+	display: inline-block;
+    float: none;
+    padding: .1em 1.7em;
+}
+
+.tabs-horizontal > li:last-child{
+	border-left: 1px solid $light-gray;
+}
+
+.tabs-horizontal > li:first-child {
+	padding-left: 0;
+	
+	&.no_manual {
+		border: none;
+	}
+}
+
+/*  Set tab navigation link color.
+ *  Adjust to fit your design. */
+.tabs-horizontal a,
+.tabs-stacked a {
+    color: $light-gray;
+    text-decoration: none;
+}
+
+/*  When active, change tab navigation background color. */
+.tabs-horizontal > .active,
+.tabs-stacked > .active {
+    background-color: #ffffff;
+}
+
+/*  On hover and when active, change tab navigation color */
+.tabs-horizontal a:hover,
+.tabs-stacked a:hover,
+.tabs-horizontal > .active > a,
+.tabs-stacked > .active > a {
+    color: $black;
+    text-decoration: none;
+    font-family: 'Lato';
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+/*  For bigger screens.
+ *  (Tabby is mobile-first.) */
+@media (min-width: 40em) {
+
+    /*  Turn stacked nav into vertical list. */
+    .tabs-stacked {
+        border: none;
+        margin-left: 0;
+        padding-left: 0;
+        padding-top: 1em;
+        padding-bottom: 1em;
+    }
+
+    .tabs-stacked > li,
+    .tabs-stacked > li > a {
+        display: block;
+        width: 100%;
+    }
+}
+
+
+/* Clearfix */
+.tabs:before, .tabs:after { 
+    display: table; 
+    content: ""; 
+    zoom: 1; 
+}
+
+.tabs:after { 
+    clear: both; 
+}

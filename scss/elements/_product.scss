@@ -1,0 +1,435 @@
+.product_list {
+	background-color: $white;
+	text-align: center;
+	
+	ul {
+		@include clearfix;
+		list-style: none;
+		padding: 18px 0px 17px 0px;
+		text-align: center;
+		
+		li {
+			padding-left: 40px;
+			font-size: 14px;
+			text-transform: uppercase;
+			font-family: 'Lato', arial;
+			display: inline-block;
+			
+			&:first-child {
+				padding-left: 0px;
+			}
+			
+			a {
+				color: $black;
+				
+				&:hover {
+					color: $blue;
+				}
+				
+				&.active {
+					color: $blue;
+					font-weight: 700;
+				}
+			}
+		}
+	}
+	
+	&.techpure {
+		
+		.container {
+			padding: 0;
+			max-width: none;
+			
+			ul {
+				margin-bottom: 40px;
+			}
+		}
+	}
+}
+
+.product_single {	
+	background: url('../images/grid_bg.jpg') no-repeat;
+	background-size: cover;
+	padding: 70px 0;
+	
+	@include media($mobile) { 
+		padding: 20px 0;
+	}
+	
+	.container {
+		padding: 0 5%;
+	
+	h1 {
+		float: left;
+		width: 50%;
+		display: block;
+		font-size: 30px;
+		color: $blue;
+		margin: 0px 0px 5px 0px;
+		@include media($mobile){
+			width: 100%;
+			margin: 25px 0;
+		}
+	}
+	
+	}
+}
+
+.product_left {
+	@include span-columns(6);
+	
+	@include media($mobile) {
+		@include span-columns(4);
+	}
+	
+	h4 {
+		font-size: 18px;
+		margin-bottom: 10px;
+		margin-top: 5px;
+	}
+	
+	p {
+		margin-top: 1em;
+	}
+	
+	img {
+		margin-top: 10px;
+		margin-bottom: 5px;
+	}
+	
+	ul {
+		-webkit-padding-start: 20px;
+	}
+}
+
+.product_right {
+	@include span-columns(6);
+	@include omega();
+	float: right;
+	
+	@include media($mobile) {
+		@include span-columns(4);
+		float: left;
+	}
+	
+	.flexslider {
+		-webkit-box-shadow: none;
+		box-shadow: none;
+		border-radius: 0px;
+		
+		@include media($mobile){
+			margin-bottom: 25px;
+		}
+		
+		.flex-direction-nav {
+			position: absolute;
+			left: 0;
+			top: 50%;
+			width: 100%;
+			
+			li {
+				
+				a {
+					width: 50px;
+					height: 50px;
+					border-radius: 50%;
+					background-color: $lightgray;
+					text-align: center;
+					
+					&:before {
+						line-height: 50px;
+						text-align: center;
+						font-weight: 400;
+						font-size: 30px;
+					}
+					
+					&.flex-prev {
+						
+						&:before {
+							font-family: 'FontAwesome';
+							content: '\f104';
+						} 
+					}
+					
+					&.flex-next {
+						
+						&:before {
+							font-family: 'FontAwesome';
+							content: '\f105';
+						} 
+					}
+				}
+			}
+		}
+		
+		.slides {
+			
+			img {
+				width: 70%;
+				height: auto;
+				margin: 0 auto;
+			}
+		}
+		
+		.clone {
+			
+			img {
+				width: 70%;
+				height: auto;
+				margin: 0 auto;
+			}
+		}
+		
+		.flex-active-slide {
+			
+			img {
+				width: 70%;
+				height: auto;
+				margin: 0 auto;
+			}
+		}
+	}
+}
+
+.product_chart {
+	@include span-columns(12);
+	text-align: center;
+	padding-top: 40px;
+	
+	.mobile_table {
+		display: none;
+		
+		@include media($mobile) {
+			display: block;
+		}
+	}
+	
+	.scroll {
+		overflow-x: scroll;
+		
+		@include media($tablet) {
+			overflow-x: scroll;
+		}
+		
+		.dataTables_length {
+			display: none;
+		}
+		
+		.dataTables_filter {
+			display: none;
+		}
+		
+		.dataTables_info {
+			display: none;
+		}
+		
+		.dataTables_paginate, .paging_two_button {
+			display: none;
+		}
+		
+		.tablepress .row-hover tr:hover td {
+			background-color: inherit !important;
+			font-size: 14px;
+		}
+		
+		table {
+			border-color: #4f9aca;
+			border: 2px solid #4f9aca;
+			width: 100%;
+			font-size: 14px !important;
+			font-family: 'Myriad Pro';
+			
+			.sorting {
+				background-color: $blue !important;
+				color: $white;
+				border: 2px solid #4f9aca;
+				font-size: 14px;
+				
+				div {
+					
+					&:after {
+						content: none !important;
+					}
+				}
+			}
+			
+			.even {
+				background-color: #d9e5f3 !important;
+				font-size: 14px !important;
+				
+				td {
+					background-color: transparent;
+					border: 2px solid #4f9aca;
+				}
+			}
+			
+			.odd {
+				background-color: transparent;
+				font-size: 14px !important;
+				
+				td {
+					background-color: transparent;
+					border: 2px solid #4f9aca;
+				}
+			}
+		}
+	}
+}
+
+.mobile_specs { 
+	@include media($mobile) { 
+		display: block;
+		
+		h4  {
+			color: $blue;
+			margin-bottom: -1px;
+		}
+		
+		> ul { 
+			padding-left: 14px;
+			font-size: 14px;
+		}
+		
+		p { 
+			font-size: 15px;
+		}
+	}
+		display: none;
+			
+	}
+	
+.mobile_manuals { 
+	@include media($mobile) {
+		display: block;
+		h4	{ 
+			color: $blue;
+		}
+		
+		> ul.manuals { 
+			padding-left: 14px;
+			font-size: 14px
+		}
+		
+		a { 
+			color: $black;
+			font-weight: bold;
+		}
+	}
+	
+	display: none;
+}	
+
+.related_specs {
+	background-color: $white;
+	min-height: 340px;
+	padding: 70px 0px;
+	
+	.container {
+		max-width: 68.5em;
+		
+		@include media($mobile) {
+			padding: 0 5%;
+		}
+	}
+	
+	@include media($mobile) { 
+		padding: 14px 0;
+		min-height: 220px;
+	}
+	
+	.related {
+		@include span-columns(6);
+		
+		@include media($tablet) { 
+			@include span-columns(8);
+			margin-top: 25px;
+		}
+		
+		@include media($mobile){
+			@include span-columns(4);
+		}
+		
+		h4 {
+			text-transform: uppercase;
+			margin: 0;
+			font-weight: bold;
+			
+			@include media($mobile) { 
+				font-size: 16px;
+			}
+		}
+		
+		ul {
+			@include clearfix;
+			list-style: none;
+			
+			li {
+				@include span-columns(4);
+				text-align: center;
+				
+				img {
+					width: 100%;
+					height: auto;
+					display: block;
+				}
+			}
+		}
+	}
+	
+	.specs {
+		@include span-columns(6);
+		
+		@include media($tablet){
+			//@include span-columns(8);
+		}
+		
+		@include media($mobile) { 
+			font-size: 14px;
+			@include span-columns(4);
+		}
+		
+		.tabs_container {
+			
+			.tabs-content {
+				margin-top: 10px;
+			
+				ul {
+				
+					&.manuals {
+						list-style: none;
+						margin-top: 0px;
+						
+						li {
+							margin-bottom: 10px;
+						}
+					}
+					
+					li {
+					
+						&.active {
+							
+							a {
+								font-weight: bold;
+								color: $black;
+								
+								&:hover {
+									color: $blue;
+								}
+							}
+						}
+						
+						a {
+							color: $black;
+							text-transform: capitalize;
+							font-weight: bold;
+							
+							&:hover {
+								color: $blue;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,199 @@
+.single_page {
+	
+	.email_hover {
+		
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.single_page .gform_wrapper, #gform_wrapper_6 {
+	@include span-columns(12);
+	max-width: 100%;
+	margin: 0;
+	
+	@include media($mobile) {
+		width: 100%;
+	}
+	
+	.gform_body {
+		@include span-columns(9);
+		
+		@include media($mobile) {
+			width: 100%;
+		}
+	}
+	
+
+	ul {
+		
+		li.gfield {
+			margin-bottom: 20px;
+			@include span-columns(5);
+			clear: none !important;
+			
+			.ginput_container {
+				width: 100%;
+			}
+			
+			input[type="text"], textarea {
+				border: none;
+				box-shadow: 2px 2px 8px 2px rgb(225, 225, 225);
+				height: 40px;
+				padding: 2px 10px !important;
+				font-size: 16px;
+				width: 100%;
+				color: $black;
+				text-transform: none;
+				
+				&::-webkit-input-placeholder {
+				   color: $textgray;
+				   text-transform: uppercase;
+				}
+				
+				:-moz-placeholder { /* Firefox 18- */
+				   color: $textgray;
+				   text-transform: uppercase;  
+				}
+				
+				::-moz-placeholder {  /* Firefox 19+ */
+				   color: $textgray;
+				   text-transform: uppercase; 
+				}
+				
+				:-ms-input-placeholder {  
+				   color: $textgray;
+				   text-transform: uppercase;  
+				}
+			}
+			
+			textarea {
+				height: auto;
+				padding-top: 15px !important;
+			}
+			
+			label {
+				// display: none !important;
+				
+				@include media($tablet){
+					font-size: 13px;
+				}
+			 }
+			
+			&.three_width {
+				@include span-columns(4);
+				
+				@include media($mobile) {
+					width: 48%;
+					margin-right: 4%;
+					
+					&#field_4_2 {
+						float: right;
+						margin-right: 0;
+					}
+				}
+				/*
+					input#choice_16_0 { 
+					margin-left: 5px;
+				}
+				*/
+			}
+			
+			&.two_width {
+				@include span-columns(7);
+				
+				@include media($mobile) {
+					width: 100%;
+					margin-right: 0;
+				}
+			}
+			
+			&.half_width {
+				@include span-columns(5.5);
+				
+				@include media($mobile) {
+					width: 100%;
+					margin-right: 0;
+				}
+			}
+			
+			&.full_width {
+				@include span-columns(16);
+				
+				@include media($mobile) {
+					width: 100%;
+					margin-right: 0;
+				}
+			}
+			
+			&.full_width_mobile {
+				
+				@include media($mobile) {
+					width: 100%;
+					margin-right: 0;
+				}
+			}
+			
+			&.form_contact_info {
+				@include span-columns(4);
+				position: absolute;
+				right: -30%;
+				
+				@include media($mobile) {
+					position: relative;
+					left: 0;
+					width: 100%;
+				}
+				
+				h2 {
+					margin: 0 0 10px 0;
+					font-size: 20px;
+				}
+				
+				p {
+					margin: 0;
+					line-height: 20px;
+					font-size: 16px;
+				}
+				
+				.contact_phone {
+					margin-top: 20px;
+					color: $headerblue;
+				}
+				
+				a {
+					color: $black;
+					font-weight: bold;
+					font-size: 16px;
+					
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+			
+			&.thermostat_model_header {
+				@include span-columns(12);
+			}
+		}
+	}
+
+	.top_label {
+		
+		
+	}
+	
+	.thermostat_model_section {
+		
+		h3 {
+			color: $headerblue;
+			font-size: 20px;
+		}
+	}
+	
+	input[type="checkbox"], input[type="radio"] { 
+		margin-left: 5px;
+		margin-bottom: 5px;
+	}
+}

@@ -1,0 +1,303 @@
+.category_filter {
+	background-color: $white;
+	text-align: center;
+	
+	@include media($tablet) {
+		display: none;
+	}
+	
+	ul {
+		@include clearfix;
+		list-style: none;
+		padding: 17px 0px 18px 0px;
+		text-align: center;
+		vertical-align: top;
+		
+		.filter {
+			padding-left: 40px;
+			font-size: 14px;
+			text-transform: uppercase;
+			font-family: 'Lato', arial;
+			display: inline-block;
+			
+			@include media($tablet) {
+				display: block;
+				padding-left: 0px;
+			}
+			
+			@include media($mobile) {
+				display: block;
+				padding-left: 0px;
+			}
+			
+			&:first-child {
+				padding-left: 0px;
+			}
+			
+			a {
+				color: $black;
+				
+				&.active {
+					color: $blue;
+					font-weight: 700;
+				}
+				
+				&:hover {
+					color: $blue;
+				}
+			}
+		}
+		
+		.motor {
+			padding-left: 20px;
+		}
+	}
+}
+
+.mobile_filter {
+	display: none;
+	
+	@include media($tablet) {
+		@include span-columns(4);
+	}
+	
+	@include media($mobile) {
+		@include span-columns(2);
+		@include omega();
+		margin-left: 5px;
+	}
+	
+	.select {
+		border: none;
+		box-shadow: none;
+		font-size: 14px;
+		background: transparent;
+		color: $black;
+		margin: 0px 0px;
+		border-radius: 0px;
+		background: #fff url('../images/select_arrow.jpg') right center no-repeat;
+		display: inline-block;
+		overflow: hidden;
+		width: 100%;
+	
+		select {
+			border: 0;
+			background: transparent;
+			border-radius: 0px;
+			-webkit-appearance: none;
+			-moz-appearance: window;
+			appearance: none;
+			width: 120%;
+			padding: 6px;
+			outline: none;
+			
+			&::focus {
+				outline: none;
+				outline: 0;
+			}
+		}
+		
+		select::-moz-focus-inner { 
+		  border: 0;
+		  outline: none;
+		}
+	}
+}
+
+.product_category {
+	background-image: url('../images/gray_bg_pattern.jpg');
+	background-repeat: repeat;
+	//background-size: cover;
+	padding-top: 20px;
+	
+	h1 {
+		color: $blue;
+		
+		@include media($tablet) {
+			font-size: 24px;
+		}
+		
+		@include media($mobile) {
+			@include span-columns(1.7);
+			margin-top: 0;
+			margin-right: 2.42297%;
+			font-size: 16px;
+		}
+	}
+	
+	.filter_by {
+		display: none;
+		
+		@include media($tablet) {
+			@include span-columns(.8);
+	
+		}
+		
+		@include media($mobile) {
+			@include span-columns(.7);
+			margin-right: 0;
+		}
+	}
+	
+	.products_wrap {
+		@include span-columns(8);
+		@include clearfix;
+		margin-top: 10px;
+		
+		@include media($mobile) {
+			@include span-columns(4);
+		}
+		
+		.grid {
+			//@include span-columns(8);
+			margin-top: 20px;
+			
+			ul {
+				@include clearfix;
+				list-style: none;
+			
+				a {
+					@include span-columns(4);
+					max-height: 195px;
+					margin-bottom: 30px;
+					background-color: $white;
+					box-shadow: 4px -2px 10px #e1e1e1;
+					
+					&:nth-child(3n) {
+						margin-right: 0px;
+					}
+					
+					@include media($mobile) {
+						@include span-columns(2);
+						
+						&:nth-child(3n) {
+							margin-right: 7.42297% !important;
+						}
+						
+						&:nth-child(2n) {
+							margin-right: 0px !important;
+						}
+					}
+				
+					li {
+						text-align: center;
+						
+						h2 {
+							color: $blue;
+							font-size: 14px;
+							position: absolute;
+							width: 100%;
+							top: 0;
+							margin-top: 12px;
+						}
+						
+						img {
+							max-width: 54%;
+							width: 100%;
+							height: auto;
+							padding-bottom: 40px;
+							padding-top: 40px;
+						}
+						
+						p {
+							color: $blue;
+							font-size: 14px;
+							position: absolute;
+							width: 100%;
+							bottom: 0;
+							margin-bottom: 12px;
+							
+							&.multi_cat {
+							
+								@include media($break940) {
+									line-height: 15px;
+								}
+								
+								@include media($tablet) {
+									font-size: 12px;
+								}
+								
+								@include media($mobile) {
+									font-size: 12px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	.sidebar {
+		@include span-columns(3);
+		@include omega();
+		@include shift(1);
+		margin-top: 10px;
+		
+		@include media($mobile) {
+			@include span-columns(4);
+			@include shift(0);
+		}
+	
+		.manuals {
+			
+			ul {
+				list-style: none;
+				
+				a {
+					background-color: $blue;
+					
+					li {
+						border: 2px solid $blue;
+						border-radius: 10px;
+						background-color: transparent;
+						text-align: center;
+						padding: 10px;
+						margin-bottom: 10px;
+						text-transform: uppercase;
+						
+						&:hover {
+							background-color: $blue;
+							color: $white;
+						}
+					}
+				}
+			}
+		}
+		
+		.quick_links {
+			margin-top: 40px;
+			
+			@include media($mobile) {
+				display: none;
+			}
+			
+			h4 {
+				color: $blue;
+				margin: 10px 0px 10px 0px;
+				text-transform: uppercase;
+			}
+			
+			ul {
+				list-style: none;
+				
+				li {
+					color: $black;
+					margin-bottom: 10px;
+					
+					&:last-child {
+						margin: 0px;
+					}
+					
+					a {
+						color: $black;
+						
+						&:hover {
+							text-decoration: underline;
+						}
+					}
+				}
+			}
+		}
+	}
+}

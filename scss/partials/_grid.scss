@@ -1,0 +1,21 @@
+// grid variables that override neat
+
+@import "../libs/neat/neat-helpers"; 
+
+// Change the grid settings
+//$column: 90px;
+//$gutter: 30px;
+$grid-columns: 12;
+$max-width: em(1280); // just a starter
+$single-width: em(1000);
+
+// Define your breakpoints
+$mobile: new-breakpoint(max-width 620px 4);
+$tablet: new-breakpoint(max-width 782px 8);
+$desktop: new-breakpoint(max-width 1280px 12);
+$desk1200: new-breakpoint(max-width 1200px 12);
+$break1080: new-breakpoint(max-width 1080px 12);
+$headerbreak: new-breakpoint(max-width 960px 10);
+$break940: new-breakpoint(max-width 940px 10);
+
+//$visual-grid: true;

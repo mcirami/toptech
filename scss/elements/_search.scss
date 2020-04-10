@@ -1,0 +1,42 @@
+.search_results_section {
+	background: url('../images/gray_bg_pattern.jpg');
+	background-repeat: repeat;
+	padding: 100px 0 100px;
+	@include span-columns(12);
+	
+	.container {
+		@include span-columns(9);
+		@include shift(1);
+		
+		@include media($mobile) {
+			width: 100%;
+			margin: 0;
+		}
+	}
+	
+	h1 {
+		color: $headerblue;
+		font-weight: 400;
+		margin-bottom: 40px;
+		
+		span {
+			color: $black;
+			font-size: 26px;
+			font-style: italic;
+			margin-left: 12px;
+		}
+	}
+	
+	a {
+		font-size: 20px;
+		color: $black;
+		
+		&:hover {
+			color: $headerblue;
+		}
+	}
+	
+	p {
+		margin-bottom: 20px;
+	}
+}

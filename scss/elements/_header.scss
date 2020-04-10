@@ -1,0 +1,503 @@
+.logged-in {
+	#wpadminbar {
+		position: fixed !important;
+	}
+}
+
+#global_header {
+	z-index: 2;
+
+	.header_top {
+		height: 40px;
+		
+		div, #search_form {
+			display: inline-block;
+			height: 40px;
+			margin: 0;
+			float: left;
+			clear: none;
+		}
+		
+		.header_top_1 {
+			width: 5%;
+			background-color: $topheaderblue1;
+			
+			@include media($mobile) {
+				width: 10%;
+			}
+		}
+		
+		.header_top_2 {
+			width: 10%;
+			background-color: $topheaderblue2;
+			
+			@include media($mobile) {
+				width: 15%;
+			}
+		}
+		
+		.header_top_3 {
+			width: 15%;
+			background-color: $topheaderblue3;
+			
+			@include media($mobile) {
+				width: 25%;
+			}
+		}
+		
+		.header_top_4 {
+			width: 35%;
+			background-color: $topheaderblue4;
+			text-align: right;
+			padding-right: 10px;
+			
+			@include media($mobile) {
+				width: 50%;
+			}
+			
+			h3 {
+				text-transform: uppercase;
+				margin: 0;
+				line-height: 40px;
+				font-size: 14px;
+				color: $white;
+				display: inline-block;
+				cursor: default;
+
+				@include media($mobile) {
+					display: none;
+				}
+				
+				a {
+					color: $white;
+					text-decoration: none;
+				}
+			}
+		}
+		
+		#search_form {
+			width: 35%;
+			
+			@include media($mobile) {
+				display: none;
+			}
+			
+			input[type="text"] {
+				width: 100%;
+				height: 100%;
+				border: none;
+				font-family: "FontAwesome";
+				padding-left: 10px;
+			}
+		}
+	}
+	
+	.header_bottom {
+		background-color: $white;
+		
+		
+		@include media($break1080) {
+			text-align: center;
+		}
+		
+		@include media($mobile) {
+			width: 100%;
+			background: none;
+			background-color: $white;
+			padding: 0;
+		}
+		
+		
+		.logo {
+			@include clearfix;
+			@include span-columns(2);
+			padding: 20px 0 14px;
+			
+			@include media($break1080) {
+				width: 100%;
+				float: none;
+				text-align: center;
+			}
+			
+			@include media($mobile) {
+				float: none;
+				text-align: center;
+			}
+			
+			a {
+				
+				&:first-child {
+					@include span-columns(9);
+					
+					@include media($break1080) {
+						margin: 0 auto;
+						
+						img {
+							padding-left: 30%;
+						}
+					}
+				}
+				
+				&:nth-child(2) {
+					@include span-columns(2);
+					display: none;
+					
+					@include media($desktop) {
+						display: none;
+					}
+					
+					@include media($desk1200) {
+						display: none;
+					}
+					
+					@include media($headerbreak) {
+						display: block;
+					}
+					
+					@include media($tablet) {
+						display: block;
+					}
+					
+					@include media($mobile) {
+						display: none;
+					}
+				}
+			}
+			
+			.slide_button_tablet {
+				display: none; 
+				width: auto;
+				padding: 8px 16px;
+				margin-top: 14px;
+				margin-left: 20px;
+				line-height: 10px;
+				text-transform: uppercase;
+				font-size: 14px;
+				
+				@include media($desk1200) {
+					padding: 8px 10px;
+					font-size: 14px !important;
+					margin-left: 5px;
+					display: none;
+				}
+				
+				@include media($break1080) {
+					margin: 10px 0 12px 0px;
+					display: block;
+					
+					span {
+						font-size: 14px;
+					}
+				}
+				
+				@include media($tablet) {
+					display: none;
+				}
+				
+				&:hover {
+					background-color: #6bc64b;
+					color: $white;
+				}
+			}
+		}
+		
+		.slide_button {
+			display: inline-block;
+			width: auto;
+			padding: 8px 16px;
+			margin-top: 10px;
+			margin-left: 20px;
+			line-height: 10px;
+			text-transform: uppercase;
+			font-size: 14px;
+			
+			@include media($desk1200) {
+				padding: 8px 10px;
+				font-size: 12px !important;
+			}
+			
+			@include media($headerbreak) {
+				margin: 10px 0 12px 0px;
+				display: none;
+				
+				span {
+					font-size: 12px;
+				}
+			}
+			
+			@include media($tablet) {
+				display: none;
+			}
+			
+			&:hover {
+				background-color: #6bc64b;
+				color: $white;
+			}
+		}
+		
+		.bottom_nav {
+			@include span-columns(10);
+			@include omega();
+			text-align: right;
+			margin-top: 12px;
+			
+			@include media($desk1200) {
+				@include span-columns(9);
+				@include omega();
+				margin-left: 5px;
+			}
+		
+			@include media($break1080) {
+				@include span-columns(12);
+				text-align: center;
+				margin: auto;
+			}
+		
+			@include media($mobile) {
+				display: none;
+			}
+			
+			> ul {
+				list-style: none;
+				display: inline-block;
+				margin-top: 14px;
+				vertical-align: top;
+				text-align: left;
+				
+				@include media($break1080) {
+					margin-top: 10px;
+					text-align: center;
+				}
+		
+				> li {
+					float: left;
+					vertical-align: middle;
+					
+					@include media($break1080) {
+						float: none;
+						display: inline-block;
+						text-align: center;
+					}
+					
+					&:nth-child(1){
+						
+						
+						ul {
+							min-width: 100%;
+						}
+					}
+					
+					&:nth-child(3){
+						
+						
+						ul {
+							min-width: 100%;
+						}
+					}
+					
+					&:nth-child(5){
+						
+						
+						ul {
+							min-width: 120%;
+						}
+					}
+					
+					&:nth-child(6){
+						
+						ul {
+							min-width: 200%;
+						}
+					}
+					
+					&:hover {
+						
+						> ul {
+							display: block !important;
+						}
+					}
+		
+					> a {
+						display: inline-block;
+						color: $black;
+						font-weight: bold;
+						text-transform: uppercase;
+						padding: 1rem 1rem .2rem 1rem;
+						font-size: 14px;
+						padding-bottom: 5px;
+						
+						@include media($desk1200) {
+							font-size: 14px;
+						}
+						
+						@include media($break1080) {
+							font-size: 14px;
+						}
+					}
+					
+					> ul {
+						display: none;
+						position: absolute;
+						list-style: none;
+						background-color: $headerblue;
+						min-width: 150%;
+						padding-left: 1rem;
+						padding-bottom: 1rem;
+						
+						> li {
+							padding-top: 5px;
+							text-align: left;
+							
+							&:hover {
+								
+								a {
+									color: #35a1d8 !important;
+								}
+							}
+							
+							a {
+								color: $white;
+								font-size: 12px;
+								padding: 4px 4px 4px 0;
+								
+								&:hover {
+									color: #35a1d8;
+								}
+							}
+						}	
+					}
+					
+					&:hover {
+						background: $headerblue;
+						
+						a {
+							color: $white !important;
+						}
+						
+						> ul {
+							display: none;
+						}
+					}
+					
+					&.current-menu-item {
+						
+						a {
+							color: $headerblue;
+						}
+					}
+				}
+			}
+		}
+	}	
+	
+	.mobile_btn {
+		float: right;
+		margin-top: -16px;
+		position: absolute;
+		right: 5%;
+		top: 50%;
+	}
+	
+	.fa-bars {
+		display: none;
+		font-size: 32px;
+		color: $black;
+		
+		@include media($mobile) {
+			display: inline-block;
+			vertical-align: -webkit-baseline-middle;
+		}
+	}
+	
+	.mobile_call_us {
+		display: none;
+		background-image: url('../images/gray_bg_pattern.jpg');
+		background-repeat: repeat;
+		width: 100%;
+		text-align: center;
+		padding: 11px 0;
+		
+		@include media($mobile) {
+			display: block;
+		}
+		
+		img {
+			display: inline-block;
+			vertical-align: middle;
+			margin-right: 10px;
+		}
+		
+		h3 {
+			display: inline-block;
+			margin: 0;
+			vertical-align: middle;
+			
+			&.call_us_number {
+				color: $headerblue;
+			}
+		}
+	}
+}
+
+.mobile_menu {
+	display: none;
+	height: auto;
+	background-color: #333333;
+	color: rgba(255, 255, 255, 0.6);
+	
+	#mobile_search_form {
+		top: 50px;
+		padding: 20px 30px;
+		
+		input[type="text"] {
+			width: 100%;
+			height: 30px;
+			border: none;
+			border-radius: 0;
+			background-color: $white;
+			font-family: "FontAwesome";
+			padding-left: 10px;
+			color: $black;
+			z-index: 1;
+		}
+	}
+	
+	ul.mm-list {
+		padding: 20px;
+		margin-top: 100px;
+		
+		li {
+			//border-top: 1px solid;
+			padding: 4px 0;
+			margin: 0;
+			
+			&.menu-item-19 {
+				//border-bottom: 1px solid;
+			}
+			
+			&.menu-item-22 {
+				display: none;
+			}
+			
+			a {
+				display: inline-block;
+				width: 100%;
+				padding: 0 10px;
+				font-size: 16px;
+				color: $white;
+			}
+			
+			&:after {
+				border: none !important;
+			}
+		}
+	}
+}
+
+.hero_section {
+	
+	img {
+		width: 100%;
+		height: auto;
+	}
+}

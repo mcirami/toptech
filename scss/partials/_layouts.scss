@@ -1,0 +1,27 @@
+// general wrapper class
+.container {
+	@extend %post;
+	// Set max-width here
+	max-width: $max-width;
+	padding: 0 15px;
+		
+
+	.content {
+		@include span-columns(8);
+		padding: 2rem 0;
+	}
+	.sidebar {
+		@include span-columns(4);
+		@include omega;
+		padding: 2rem 0;
+	}
+	
+	.play_btn {
+		position: absolute;
+		width: 35% !important;
+		top: 20%;
+		left: 31%;
+		z-index: 2;
+		opacity: .8;
+	}
+}
